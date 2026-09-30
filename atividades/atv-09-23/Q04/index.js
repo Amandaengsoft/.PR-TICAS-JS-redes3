@@ -1,14 +1,15 @@
 const formDados = document.getElementById("formDados");
 
-function polegada(evento) {
+function raio(evento) {
  evento.preventDefault();
 
-  let polegada = Number(document.getElementById("polegada").value);
+  let raio = Number(document.getElementById("raio").value);
 
-  let valorCentimetro = polegada * 2.54;
+  let valorPerimetro = raio * 2 * Math.PI;
 
   const pResultado = document.getElementById("resultado"); // pega um elemento pelo ID
-  pResultado.textContent = "o resultado da conversão é: " + valorCentimetro.toFixed(2) + "cm";
+  pResultado.textContent = "o resultado da conversão é: " + valorPerimetro.toFixed(2);
+
 }
 
-formDados.addEventListener("submit", polegada);
+formDados.addEventListener("submit", raio);
